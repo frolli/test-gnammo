@@ -1,0 +1,235 @@
+/*
+ * Base structure
+ */
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular-webfont.ttf');
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  background-color: #f1f1f1;
+  font-family: 'Oswald';
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+.sidebar > p {
+  font-family: 'Helvetica';
+  font-size: 22px;
+  color: #61605e;
+  text-align: center;
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #fff;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-top: 18px;
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -9px;
+  background-color: #fff;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  color: #909090;
+  font-size: 18px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #36bcc5;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: #fff;
+}
+.nav>li>a {
+  padding: 8px 15px;
+}
+.navbar-white{
+  background-color: #fff;
+  border-bottom: 2px solid #a1a1a1;
+}
+.fa-angle-right{
+  font-weight: 800;
+  float:right;
+  color:#c5c5c5;
+}
+
+/*
+ * Sidebar right
+ */
+.sidebar-right{
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #f4f4f4;
+  border-right: 1px solid #eee;
+  font-family: 'Helvetica';
+}
+
+.glyphicon-info-sign{
+  font-size: 51px;
+  color:#666666;
+  display: block;
+  width: 52px;
+  margin: 0 auto;
+}
+.div-glyphicon-info{
+  margin-top: 36px;
+  margin-bottom: 17px;
+  width: 100%;
+  display: block;
+}
+
+.sidebar-right > p{
+    text-align: justify;
+}
+
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+h2{
+  text-align: center;
+  color:#36bcc5;
+}
+
+label{
+  font-family: 'Helvetica';
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.main p{
+  font-family: 'Helvetica';
+  text-align: center;
+}
+.main a {
+  color: #36bcc5;
+  text-decoration: underline;
+}
+.main .row{
+    margin-bottom: 16px;
+}
+
+/*
+ * Slider Prize
+ */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: #270712;
+  border: 1px solid #270712;
+  font-weight: bold;
+  border-radius: 8px;
+  opacity: 0.4;
+}
+.ui-widget-header {
+  border: 1px solid #e78f08;
+  background: #da1c5c;
+  color: #fff;
+  font-weight: bold;
+}
+#amount_min , #amount_max{
+  font-weight: bold;
+  font-size: 12px;
+  font-family: 'Helvetica';
+  background-color: transparent;
+}
+#amount_max{
+  float: right;
+  text-align: right;
+}
+#tot_min, #tot_max{
+  font-size: 24px;
+  background-color: transparent;
+  color: #36bcc5;
+  width: 30px;
+}
+.btn-enter,
+.btn-enter:hover,
+.btn-enter:active{
+  background-color: #36bcc5 !important;
+  color:#fff;
+}
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}

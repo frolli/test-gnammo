@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-white navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Gnammo</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+        <p>
+          4 step per iniziare a guadagnare
+        <p>
+          <ul class="nav nav-sidebar">
+            <li>
+              <a href="#">MENU
+               <i class="fa fa-angle-right"></i> 
+              </a>
+            </li>
+            <li>
+              <a href="#">FOTO
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">LUOGO
+              <i class="fa fa-angle-right"></i>
+              </a>
+            </li>
+            <li class="active">
+             <a href="#">EVENTO
+              <i class="fa fa-angle-right"></i>
+             </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+          <h2>EVENTO</h2>
+          <p>Inserisci nuovo evento <a href="#">o copia da un evento passato</a></p>
+          <div class="row">
+             <div class="col-md-3">
+              <label>Data</label>
+              <div class="form-group">
+                  <div class='input-group date' id='datetimepicker1'>
+                      <input type='text' class="form-control" />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <label>Ora</label>
+              <div class="form-group">
+                  <div class='input-group date' id='datetimepicker1'>
+                      <input type='text' class="form-control" />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Prenotabile fino al</label>
+                  <div class='input-group date' id='datetimepicker1'>
+                      <input type='text' class="form-control" />
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+              <div class="col-md-1"></div>
+             </div>
+          </div>
+          <div class="row">
+             <div class="col-md-6 form-group">
+              <label>Titolo evento</label>
+              <input type="text" class="form-control">
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-md-12">
+              <form role="form">
+                <div class="form-group">
+                  <label for="comment">Descrizione:</label>
+                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
+              </form>
+             </div>
+           </div>
+           <div class="row">
+              <div class="col-md-4 form-group">
+                <label>Prezzo</label>
+                  <div class='input-group'>
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-euro"></span>
+                      </span>
+                      <input type='text' class="form-control" />
+                  </div>
+             </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+                <label for="amount">Numero posti</label><br>
+                <input type="text" id="amount_min" readonly style="border:0">
+                <input type="text" id="amount_max" readonly style="border:0">
+                <div id="slider-range"></div>
+             </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <h3>CON QUESTO EVENTO PUOI INCASSARE DA
+              <input type="text" id="tot_min" readonly style="border:0">
+              A
+              <input type="text" id="tot_max" readonly style="border:0"></h3>
+            </div>
+            <div class="col-md-6">
+              <button type="button" class="btn btn-lg btn-enter">AVANTI</button>
+            </div>
+          </div>
+        <div class="col-sm-3 col-md-2 sidebar-right">
+          <div class="div-glyphicon-info">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+          </div>
+          <p>Un menù on demand può diventare un evento se compili questi campi.Scegli una data in cui proporre l'evento.</p>
+          <p>OR</p>
+          <p>Ricordati che devi creare o scegliere un menù per pubblicare un evento. Le impostazioni sul prezzo e sul numero di persone dell'evento sovrascrivono quelle del menuù.</p>
+          <p>Se ho selezionato Menù on demand al primo step vedo il primo tips, se ho selezionato evento vedo il secondo Tips</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+  $(function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 30,
+      values: [ 5, 20 ],
+      slide: function( event, ui ) {
+        $( "#amount_min" ).val( "Min " + ui.values[ 0 ] );
+        $( "#amount_max" ).val( "Max " + ui.values[ 1 ] );
+        $( "#tot_min" ).val( ui.values[ 0 ] + "€");
+        $( "#tot_max" ).val( ui.values[ 1 ]  + "€");
+      }
+    });
+    $( "#amount_min" ).val( "Min " + $( "#slider-range" ).slider( "values", 0 ));
+    $( "#amount_max" ).val("Max " + $( "#slider-range" ).slider( "values", 1 ));
+    $( "#tot_min" ).val( $( "#slider-range" ).slider( "values", 0 )+ "€");
+    $( "#tot_max" ).val( $( "#slider-range" ).slider( "values", 1 )+ "€");
+  });
+  </script>
+  </body>
+</html>
