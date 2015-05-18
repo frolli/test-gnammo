@@ -170,9 +170,9 @@
                           <div class="row row-next">
                             <div class="col-md-5">
                               <h3>CON QUESTO EVENTO PUOI INCASSARE DA
-                              <input type="text" id="tot_min" readonly style="border:0">
+                              <span type="text" id="tot_min" readonly style="border:0"></span>
                               A
-                              <input type="text" id="tot_max" readonly style="border:0"></h3>
+                              <span type="text" id="tot_max" readonly style="border:0"></span></h3>
                             </div>
                             <div class="col-md-4 col-md-offset-3">
                               <button type="button" class="btn btn-lg btn-enter">AVANTI</button>
@@ -248,12 +248,12 @@ moment.locale('it');
     });
     $( "#amount_min" ).val( "Min " + $( "#slider-range" ).slider( "values", 0 ));
     $( "#amount_max" ).val("Max " + $( "#slider-range" ).slider( "values", 1 ));
-    $( "#tot_min" ).val( $( "#slider-range" ).slider( "values", 0 ) * $("#amount").val() + "€");
-    $( "#tot_max" ).val( $( "#slider-range" ).slider( "values", 1 ) * $("#amount").val() + "€");
+    $( "#tot_min" ).html( $( "#slider-range" ).slider( "values", 0 ) * $("#amount").val() + "€");
+    $( "#tot_max" ).html( $( "#slider-range" ).slider( "values", 1 ) * $("#amount").val() + "€");
   });
     $("#amount").blur(function(){
-        $( "#tot_min" ).val( $( "#slider-range" ).slider( "values", 0 ) * $("#amount").val() + "€");
-        $( "#tot_max" ).val( $( "#slider-range" ).slider( "values", 1 ) * $("#amount").val() + "€");
+        $( "#tot_min" ).html( $( "#slider-range" ).slider( "values", 0 ) * $("#amount").val() + "€");
+        $( "#tot_max" ).html( $( "#slider-range" ).slider( "values", 1 ) * $("#amount").val() + "€");
     }); 
      $("#datetimepicker1").click(function(){
         $('#datetimepicker1').datetimepicker({
