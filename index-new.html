@@ -22,6 +22,12 @@
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <!--<link href="lib/bootstrap.min.css" rel="stylesheet">
+     <link href="lib/bootstrap-datetimepicker.min.css" rel="stylesheet">
+      <link href="lib/bootstrap.min.css" rel="stylesheet">
+       <link href="lib/font-awesome.min.css" rel="stylesheet">
+          <link href="lib/jquery-ui.min.css" rel="stylesheet">
+            <link href="lib/metisMenu.min.css" rel="stylesheet">-->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,8 +100,8 @@
                               <div class="form-group">
                                   <div class='input-group date' id='datetimepicker1'>
                                       <input type='text' class="form-control" />
-                                      <span class="input-group-addon">
-                                          <span class="glyphicon glyphicon-calendar"></span>
+                                       <span class="input-group-addon">
+                                          <i class="fa fa-calendar"></i>
                                       </span>
                                   </div>
                               </div>
@@ -104,10 +110,10 @@
                             <div class="col-md-3">
                               <label>Ora</label>
                               <div class="form-group">
-                                  <div class='input-group date' id='datetimepicker1'>
+                                  <div class='input-group date' id='datetimepicker2'>
                                       <input type='text' class="form-control" />
                                       <span class="input-group-addon">
-                                          <span class="glyphicon glyphicon-calendar"></span>
+                                          <i class="fa fa-calendar"></i>
                                       </span>
                                   </div>
                               </div>
@@ -116,10 +122,10 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label>Prenotabile fino al</label>
-                                  <div class='input-group date' id='datetimepicker1'>
+                                  <div class='input-group date' id='datetimepicker3'>
                                       <input type='text' class="form-control" />
                                       <span class="input-group-addon">
-                                          <span class="glyphicon glyphicon-calendar"></span>
+                                          <i class="fa fa-calendar"></i>
                                       </span>
                                   </div>
                               </div>
@@ -147,9 +153,9 @@
                                 <label>Prezzo</label>
                                   <div class='input-group'>
                                       <span class="input-group-addon">
-                                          <span class="glyphicon glyphicon-euro"></span>
+                                          <i class="fa fa-eur"></i>
                                       </span>
-                                      <input type='text' class="form-control" />
+                                      <input type='text' class="form-control" id="amount"/>
                                   </div>
                              </div>
                           </div>
@@ -174,8 +180,8 @@
                           </div>
                         </div>
                         <div class="col-lg-3 sidebar-right">
-                             <div class="div-glyphicon-info">
-                                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                             <div class="div-fa-info">
+                                <i class="fa fa-info-circle"></i>
                               </div>
                               <p>Un menù on demand può diventare un evento se compili questi campi. Scegli una data in cui proporre l'evento.</p>
                               <p>OR</p>
@@ -188,7 +194,24 @@
         <!-- /#page-wrapper -->
                 <footer class="footer">
                   <div class="container">
-                  Footer
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                            <li><i class="fa fa-envelope"></i> CONTATTI</li>
+                            <li><i class="fa fa-question-circle"></i> FAQ</li>
+                            <li>BLOG</li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul>
+                            <li><i class="fa fa-smile-o"></i>ISCRIVITI!</li>
+                            <li><i class="fa fa-file-text-o"></i>TERMINI E CONDIZIONI</li>
+                            <li><i class="fa fa-lock"></i> PRIVACY POLICY</li>
+                         </ul>
+                        </div>
+                    </div>
                   </div>
                 </footer>
     </div>
@@ -197,8 +220,9 @@
      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="lib/moment.min.js"></script>
+    <script src="lib/locale/it.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
     <!-- Latest compiled and minified JavaScript -->
@@ -206,7 +230,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.0.0/metisMenu.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
+
     <script>
+moment.locale('it');
   $(function() {
     $( "#slider-range" ).slider({
       range: true,
@@ -216,15 +242,34 @@
       slide: function( event, ui ) {
         $( "#amount_min" ).val( "Min " + ui.values[ 0 ] );
         $( "#amount_max" ).val( "Max " + ui.values[ 1 ] );
-        $( "#tot_min" ).val( ui.values[ 0 ] + "€");
-        $( "#tot_max" ).val( ui.values[ 1 ]  + "€");
+        $( "#tot_min" ).val( ui.values[ 0 ] * $("#amount").val() + "€");
+        $( "#tot_max" ).val( ui.values[ 1 ] * $("#amount").val() + "€");
       }
     });
     $( "#amount_min" ).val( "Min " + $( "#slider-range" ).slider( "values", 0 ));
     $( "#amount_max" ).val("Max " + $( "#slider-range" ).slider( "values", 1 ));
-    $( "#tot_min" ).val( $( "#slider-range" ).slider( "values", 0 )+ "€");
-    $( "#tot_max" ).val( $( "#slider-range" ).slider( "values", 1 )+ "€");
+    $( "#tot_min" ).val( $( "#slider-range" ).slider( "values", 0 ) * $("#amount").val() + "€");
+    $( "#tot_max" ).val( $( "#slider-range" ).slider( "values", 1 ) * $("#amount").val() + "€");
   });
+    $("#amount").blur(function(){
+        $( "#tot_min" ).val( $( "#slider-range" ).slider( "values", 0 ) * $("#amount").val() + "€");
+        $( "#tot_max" ).val( $( "#slider-range" ).slider( "values", 1 ) * $("#amount").val() + "€");
+    }); 
+     $("#datetimepicker1").click(function(){
+        $('#datetimepicker1').datetimepicker({
+            format: 'DD/MMM/YYYY'
+        });
+    });
+     $("#datetimepicker2").click(function(){
+        $('#datetimepicker2').datetimepicker({
+           format: 'LT'
+        });
+    });
+     $("#datetimepicker3").click(function(){
+        $('#datetimepicker3').datetimepicker({
+            format: 'DD/MMM/YYYY'
+        });
+    });
   </script>
 
 </body>

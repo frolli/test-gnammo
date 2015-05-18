@@ -124,14 +124,14 @@ body {
   min-height: 835px;
 }
 
-.glyphicon-info-sign{
+.fa-info-circle{
   font-size: 51px;
   color:#666666;
   display: block;
   width: 52px;
   margin: 0 auto;
 }
-.div-glyphicon-info{
+.div-fa-info{
   margin-top: 36px;
   margin-bottom: 17px;
   width: 100%;
@@ -259,6 +259,22 @@ label{
  * Footer
  */
  .footer{
+  padding-top:36px;
   border-top:2px solid #a1a1a1;
   background-color: #fff;
+  text-align: center;
+  font-size: 19px;
+  color: #909090;
+ }
+
+ .footer li{
+  margin-bottom:20px;
+ }
+
+ .footer .fa{
+  margin-right:10px;
+ }
+
+ .footer ul{
+  list-style: none;
  }
