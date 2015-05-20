@@ -10,12 +10,12 @@ body {
 
 #wrapper {
     width: 100%;
-    background:#fff;
+    background-color: #fff;
 }
 
 #page-wrapper {
     padding: 0px;
-    min-height: 835px;
+    min-height: 952px;
     background-color: #f1f1f1;
 }
 
@@ -25,7 +25,7 @@ body {
         margin: 0 0 0 250px;
         padding: 0px;
         border-left: 1px solid #e7e7e7;
-        min-height: 835px;
+        min-height: 952px
     }
 }
 .navbar-static-top {

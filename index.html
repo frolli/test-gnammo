@@ -58,9 +58,7 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-                 <p>
-                  4 step per iniziare a guadagnare
-                  <p>
+                 <p>4 step per iniziare a guadagnare</p>
                   <ul class="nav nav-sidebar">
                     <li>
                       <a href="#">MENU
@@ -91,125 +89,124 @@
 
         <div id="page-wrapper">
             <div>
-                <div class="col-lg-9">
-                    <h2>EVENTO</h2>
-                          <p class="text-center">Inserisci nuovo evento <a href="#">o copia da un evento passato</a></p>
-                          <div class="row">
-                             <div class="col-md-3">
-                              <label>Data</label>
-                              <div class="form-group">
-                                  <div class='input-group date' id='datetimepicker1'>
-                                      <input type='text' class="form-control" />
-                                       <span class="input-group-addon">
-                                          <i class="fa fa-calendar"></i>
-                                      </span>
-                                  </div>
+                <div class="col-md-9 center-column">
+                    <h2 class="first-header">EVENTO</h2>
+                      <p class="text-center">Inserisci nuovo evento <a href="#">o copia da un evento passato</a></p>
+                      <form method="post" action="#" id="event-form"> 
+                      <div class="row first-row">
+                          <div class="col-md-3">
+                          <label>Data</label>
+                          <div class="form-group">
+                              <div class='input-group date' id='datetimepicker1'>
+                                  <input name="dateFrom" type='text' class="form-control" id='input1' />
+                                   <span class="input-group-addon calendar">
+                                      <i class="fa fa-calendar"></i>
+                                  </span>
                               </div>
-                            </div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-3">
-                              <label>Ora</label>
-                              <div class="form-group">
-                                  <div class='input-group date' id='datetimepicker2'>
-                                      <input type='text' class="form-control" />
-                                      <span class="input-group-addon">
-                                          <i class="fa fa-calendar"></i>
-                                      </span>
-                                  </div>
-                              </div>
-                            </div>
-                            <div class="col-md-1"></div>
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label>Prenotabile fino al</label>
-                                  <div class='input-group date' id='datetimepicker3'>
-                                      <input type='text' class="form-control" />
-                                      <span class="input-group-addon">
-                                          <i class="fa fa-calendar"></i>
-                                      </span>
-                                  </div>
-                              </div>
-                              <div class="col-md-1"></div>
-                             </div>
                           </div>
-                          <div class="row">
-                             <div class="col-md-6 form-group">
-                              <label>Titolo evento</label>
-                              <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-md-offset-1">
+                          <label>Ora</label>
+                          <div class="form-group">
+                              <div class='input-group date' id='datetimepicker2'>
+                                  <input name="time" type='text' class="form-control" id='input2' />
+                                  <span class="input-group-addon calendar">
+                                      <i class="fa fa-calendar"></i>
+                                  </span>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3 col-md-offset-1">
+                          <div class="form-group">
+                            <label>Prenotabile fino al</label>
+                              <div class='input-group date' id='datetimepicker3'>
+                                  <input name="dateTo" type='text' class="form-control"id='input3'/>
+                                  <span class="input-group-addon calendar">
+                                      <i class="fa fa-calendar"></i>
+                                  </span>
+                              </div>
+                          </div>
+                          <div class="col-md-1"></div>
+                        </div>
+                      </div>
+                        <div class="row">
+                           <div class="col-md-6 form-group">
+                            <label>Titolo evento</label>
+                            <input name="title" type="text" class="form-control">
+                          </div>
+                         </div>
+                         <div class="row">
+                          <div class="col-md-11">
+                            <div class="form-group">
+                              <label for="comment">Descrizione:</label>
+                              <textarea name="desc" class="form-control" rows="5" id="comment"></textarea>
                             </div>
                            </div>
-                           <div class="row">
-                            <div class="col-md-12">
-                              <form role="form">
-                                <div class="form-group">
-                                  <label for="comment">Descrizione:</label>
-                                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                         </div>
+                         <div class="row row-amount">
+                            <div class="col-md-4 form-group">
+                              <label>Prezzo</label>
+                                <div class='input-group'>
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-eur"></i>
+                                    </span>
+                                    <input name="price" type='text' class="form-control" id="amount"/>
                                 </div>
-                              </form>
-                             </div>
                            </div>
-                           <div class="row row-amount">
-                              <div class="col-md-4 form-group">
-                                <label>Prezzo</label>
-                                  <div class='input-group'>
-                                      <span class="input-group-addon">
-                                          <i class="fa fa-eur"></i>
-                                      </span>
-                                      <input type='text' class="form-control" id="amount"/>
-                                  </div>
-                             </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                              <label for="amount">Numero posti</label><br>
+                              <input name="amount_min" type="text" id="amount_min" readonly style="border:0">
+                              <input name="amount_max" type="text" id="amount_max" readonly style="border:0">
+                              <div id="slider-range"></div>
+                           </div>
+                        </div>
+                        <div class="row row-next">
+                          <div class="col-md-8">
+                            <h3>CON QUESTO EVENTO PUOI <br>INCASSARE DA
+                            <span type="text" id="tot_min" readonly style="border:0"></span>
+                            A
+                            <span type="text" id="tot_max" readonly style="border:0"></span></h3>
                           </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                                <label for="amount">Numero posti</label><br>
-                                <input type="text" id="amount_min" readonly style="border:0">
-                                <input type="text" id="amount_max" readonly style="border:0">
-                                <div id="slider-range"></div>
-                             </div>
-                          </div>
-                          <div class="row row-next">
-                            <div class="col-md-5">
-                              <h3>CON QUESTO EVENTO PUOI INCASSARE DA
-                              <span type="text" id="tot_min" readonly style="border:0"></span>
-                              A
-                              <span type="text" id="tot_max" readonly style="border:0"></span></h3>
-                            </div>
-                            <div class="col-md-4 col-md-offset-3">
-                              <button type="button" class="btn btn-lg btn-enter">AVANTI</button>
-                            </div>
+                          <div class="col-md-4">
+                            <button type="submit" class="btn btn-lg btn-enter">AVANTI</button>
                           </div>
                         </div>
-                        <div class="col-lg-3 sidebar-right">
-                             <div class="div-fa-info">
-                                <i class="fa fa-info-circle"></i>
-                              </div>
-                              <p>Un menù on demand può diventare un evento se compili questi campi. Scegli una data in cui proporre l'evento.</p>
-                              <p>OR</p>
-                              <p>Ricordati che devi <a href="" class="text-decoration">creare o scegliere un menù</a> per pubblicare un evento. Le impostazioni sul prezzo e sul numero di persone dell'evento sovrascrivono quelle del menuù.</p>
-                              <p class="text-red">Se ho selezionato Menù on demand al primo step vedo il primo tips, se ho selezionato evento vedo il secondo Tips</p>
+                      </form>
+                      </div>
+                      <div class="col-md-3 hidden-sm hidden-xs sidebar-right">
+                           <div class="div-fa-info">
+                              <i class="fa fa-info-circle"></i>
                             </div>
-                        </div>
+                            <p>Un menù on demand può diventare un evento se compili questi campi. Scegli una data in cui proporre l'evento.</p>
+                            <p>OR</p>
+                            <p>Ricordati che devi <a href="" class="text-decoration">creare o scegliere un menù</a> per pubblicare un evento. Le impostazioni sul prezzo e sul numero di persone dell'evento sovrascrivono quelle del menuù.</p>
+                      </div>
+                      </div>
                     </div>
                 </div>
         <!-- /#page-wrapper -->
                 <footer class="footer">
                   <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
-                            <ul>
-                            <li><i class="fa fa-envelope"></i> CONTATTI</li>
-                            <li><i class="fa fa-question-circle"></i> FAQ</li>
-                            <li>BLOG</li>
-
-
-                            </ul>
+                        <div class="col-md-6 text-center">
+                            <div class="footer-column"><i class="fa fa-envelope"></i> CONTATTI</div>
                         </div>
-                        <div class="col-md-6">
-                            <ul>
-                            <li><i class="fa fa-smile-o"></i>ISCRIVITI!</li>
-                            <li><i class="fa fa-file-text-o"></i>TERMINI E CONDIZIONI</li>
-                            <li><i class="fa fa-lock"></i> PRIVACY POLICY</li>
-                         </ul>
+                        <div class="col-md-6 text-center">
+                            <div class="footer-column"><i class="fa fa-question-circle"></i> FAQ</div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="footer-column"><i class="fa fa-comments"></i>BLOG</div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="footer-column"><i class="fa fa-smile-o"></i>ISCRIVITI!</div>
+                        </div>
+                         <div class="col-md-6 text-center">
+                            <div class="footer-column"><i class="fa fa-file-text-o"></i>TERMINI E CONDIZIONI</div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div class="footer-column"><i class="fa fa-lock"></i> PRIVACY POLICY</div>
                         </div>
                     </div>
                   </div>
@@ -230,48 +227,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.0.0/metisMenu.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
-
-    <script>
-moment.locale('it');
-  $(function() {
-    $( "#slider-range" ).slider({
-      range: true,
-      min: 0,
-      max: 30,
-      values: [ 5, 20 ],
-      slide: function( event, ui ) {
-        $( "#amount_min" ).val( "Min " + ui.values[ 0 ] );
-        $( "#amount_max" ).val( "Max " + ui.values[ 1 ] );
-        $( "#tot_min" ).val( ui.values[ 0 ] * $("#amount").val() + "€");
-        $( "#tot_max" ).val( ui.values[ 1 ] * $("#amount").val() + "€");
-      }
-    });
-    $( "#amount_min" ).val( "Min " + $( "#slider-range" ).slider( "values", 0 ));
-    $( "#amount_max" ).val("Max " + $( "#slider-range" ).slider( "values", 1 ));
-    $( "#tot_min" ).html( $( "#slider-range" ).slider( "values", 0 ) * $("#amount").val() + "€");
-    $( "#tot_max" ).html( $( "#slider-range" ).slider( "values", 1 ) * $("#amount").val() + "€");
-  });
-    $("#amount").blur(function(){
-        $( "#tot_min" ).html( $( "#slider-range" ).slider( "values", 0 ) * $("#amount").val() + "€");
-        $( "#tot_max" ).html( $( "#slider-range" ).slider( "values", 1 ) * $("#amount").val() + "€");
-    }); 
-     $("#datetimepicker1").click(function(){
-        $('#datetimepicker1').datetimepicker({
-            format: 'DD/MMM/YYYY'
-        });
-    });
-     $("#datetimepicker2").click(function(){
-        $('#datetimepicker2').datetimepicker({
-           format: 'LT'
-        });
-    });
-     $("#datetimepicker3").click(function(){
-        $('#datetimepicker3').datetimepicker({
-            format: 'DD/MMM/YYYY'
-        });
-    });
-  </script>
-
+    <script src="js/script.js"></script>
 </body>
-
 </html>
